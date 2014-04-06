@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="main.js"></script>
+    <title>Todo List</title>
+</head>
+
+<body ng-controller="ListControl">
+    
+    <!-- todo list -->
+    <div ng-repeat="list in lists">
+        <input type="text" ng-model="list.text"/>
+        <input type="checkbox" ng-model="list.done"/>
+        <a href="" ng-click="removeItem($index)">X</a>
+    </div>
+
+    <!-- push item to list -->
+    <form ng-submit="addItem()">
+        <input type="text" placeholder="add new item" ng-model="newText"/>
+        <input type="submit"/>
+    </form>
+</body>
+
+</html>
